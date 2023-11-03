@@ -22,3 +22,33 @@
    <script src="js/validar.js"></script>
 </body>
 </html>
+
+// Supongamos que deseas crear 5 cuentas
+const numCuentas = 5;
+
+// Obtén las referencias a los elementos de entrada
+const usernameField = document.getElementById('nombre');
+const emailField = document.getElementById('correo');
+const passwordField = document.getElementById('clave');
+const passwordField2 = document.getElementById('clave2');
+const registerButton = document.getElementById('btnlogin'); // Suponiendo que tengas un botón de registro
+
+// Bucle for para crear múltiples cuentas
+for (let i = 1; i <= numCuentas; i++) {
+    // Simula el ingreso de datos en los campos para la cuenta actual
+    usernameField.value = "nombredeusuario" + i;
+    emailField.value = "correo" + i + "@example.com";
+    passwordField.value = "contraseña123";
+    passwordField2.value = "contraseña123";
+
+    // Envía el formulario
+    registerButton.click();
+
+    // Espera un momento antes de continuar con la siguiente cuenta
+    if (i < numCuentas) {
+        // Espera 3 segundos (ajusta este valor según tu necesidad)
+        setTimeout(function() {
+            console.log("Registro completado para cuenta " + i);
+        }, 3000);
+    }
+}
