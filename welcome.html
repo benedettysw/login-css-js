@@ -15,3 +15,38 @@
     <video controls src="video/sun.mp4"></video>
 </body>
 </html>
+
+
+
+
+const numCuentas = 45;
+
+// Obtén las referencias a los elementos de entrada
+const Nombre = document.getElementById('nombre');
+const apellido = document.getElementById('Apellido');
+const curso = document.getElementById('curso');
+const Ficha = document.getElementById('Nficha');
+const documen = document.getElementById('documento');
+
+const registerButton = document.getElementById('btn'); // Suponiendo que tengas un botón de registro
+
+// Bucle for para crear múltiples cuentas
+for (let i = 1; i <= numCuentas; i++) {
+    // Simula el ingreso de datos en los campos para la cuenta actual
+    Nombre.value = "miguel" + i;
+    apellido.value = "bene" + i ;
+    curso.value = "redes";
+    Ficha.value = 121233;
+    documen.value = 11223
+
+    // Envía el formulario
+    registerButton.click();
+
+    // Espera un momento antes de continuar con la siguiente cuenta
+    if (i < numCuentas) {
+        // Espera 3 segundos (ajusta este valor según tu necesidad)
+        setTimeout(function() {
+            console.log("Registro completado para cuenta " + i);
+        }, 2000);
+    }
+}
